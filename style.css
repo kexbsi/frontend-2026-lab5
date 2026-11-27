@@ -1,0 +1,172 @@
+/* ЛР №5 — стилі */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #1d2329;
+    background-color: #ffffff;
+}
+
+h1 {
+    font-size: 26px;
+    line-height: 1.25;
+}
+
+.variant {
+    color: #4b5560;
+    font-size: 14px;
+}
+
+.task {
+    margin: 24px 0;
+    padding: 16px 20px;
+    border: 1px solid #d9dee3;
+    border-radius: 8px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* ---------- Завдання 1: форма ---------- */
+.student-form {
+    max-width: 420px;
+}
+
+.field {
+    margin-bottom: 12px;
+}
+
+.field label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.field input {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 16px;
+    border: 2px solid #b8c0c8;
+    border-radius: 4px;
+}
+
+.hint {
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: #5f6a74;
+}
+
+/* Підсвічування рядків після перевірки */
+.field.valid input {
+    border-color: #1e8a3a;
+    background-color: #f1fbf3;
+}
+
+.field.invalid input {
+    border-color: #c62828;
+    background-color: #fdeeee;
+}
+
+.field.invalid label,
+.field.invalid .hint {
+    color: #c62828;
+}
+
+.field.valid .hint {
+    color: #1e8a3a;
+}
+
+.student-form button,
+.result-dialog button {
+    padding: 8px 20px;
+    font-size: 16px;
+    border: 1px solid #8a949e;
+    border-radius: 4px;
+    background-color: #f2f4f6;
+    cursor: pointer;
+}
+
+.form-message {
+    min-height: 1.5em;
+    font-weight: bold;
+}
+
+.form-message.error {
+    color: #c62828;
+}
+
+.form-message.ok {
+    color: #1e8a3a;
+}
+
+.result-dialog {
+    min-width: 300px;
+    border: 1px solid #8a949e;
+    border-radius: 8px;
+}
+
+.result-dialog dt {
+    font-weight: bold;
+}
+
+.result-dialog dd {
+    margin: 0 0 8px;
+}
+
+/* ---------- Завдання 2: таблиця ---------- */
+.palette {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.palette input {
+    width: 160px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.number-table {
+    border-collapse: collapse;
+}
+
+.number-table td {
+    width: 56px;
+    height: 48px;
+    border: 1px solid #333333;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+    font-weight: bold;
+    user-select: none;     /* подвійний клік не виділяє текст */
+}
+
+.number-table td.target {
+    cursor: pointer;
+    outline: 2px dashed #555555;
+    outline-offset: -4px;
+}
+
+footer {
+    margin: 24px 0;
+    font-size: 14px;
+    color: #5f6a74;
+}

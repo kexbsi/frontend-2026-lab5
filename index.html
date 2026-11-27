@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="JavaScript, події, регулярні вирази, валідація форми, лабораторна робота, Основи FE-технологій, ІП-44">
+    <meta name="description" content="Лабораторна робота №5 з курсу «Основи FE-технологій»: події JavaScript і перевірка форми регулярними виразами. Рудь Станіслав, ІП-44.">
+    <meta name="author" content="Рудь Станіслав Сергійович">
+    <title>Рудь С.С., ІП-44, ЛР №5, варіант 122</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/form.js" defer></script>
+    <script src="js/table.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Лабораторна робота №5 — «JavaScript. Події. Регулярні вирази»</h1>
+        <p class="variant">Рудь Станіслав Сергійович, ІП-44, варіант 122:
+            завдання 1 — рядок 122 mod 15 = 2 таблиці 1 (поля 1, 3, 4, 5, 6);
+            завдання 2 — 122 mod 10 = 2 (клітинка № 2, подвійний клік — стовпець).</p>
+    </header>
+
+    <main>
+        <section class="task" aria-labelledby="task1-title">
+            <h2 id="task1-title">Завдання 1. Форма з перевіркою регулярними виразами</h2>
+
+            <form id="student-form" class="student-form" novalidate>
+                <div class="field" data-field="fullName">
+                    <label for="fullName">ПІБ</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Прізвище І.Б., напр. Рудь С.С." autocomplete="off">
+                    <p class="hint">Формат: ТТТТТТ Т.Т. — прізвище й ініціали</p>
+                </div>
+
+                <div class="field" data-field="group">
+                    <label for="group">Група</label>
+                    <input type="text" id="group" name="group" placeholder="ТТ-ЧЧ, напр. ІП-44" autocomplete="off">
+                    <p class="hint">Формат: ТТ-ЧЧ — дві літери, дефіс, дві цифри</p>
+                </div>
+
+                <div class="field" data-field="phone">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(ЧЧЧ)-ЧЧЧ-ЧЧ-ЧЧ, напр. (067)-123-45-67" autocomplete="off">
+                    <p class="hint">Формат: (ЧЧЧ)-ЧЧЧ-ЧЧ-ЧЧ</p>
+                </div>
+
+                <div class="field" data-field="idCard">
+                    <label for="idCard">ID-card</label>
+                    <input type="text" id="idCard" name="idCard" placeholder="ТТ №ЧЧЧЧЧЧ, напр. КВ №123456" autocomplete="off">
+                    <p class="hint">Формат: ТТ №ЧЧЧЧЧЧ — дві літери, пробіл, №, шість цифр</p>
+                </div>
+
+                <div class="field" data-field="faculty">
+                    <label for="faculty">Факультет</label>
+                    <input type="text" id="faculty" name="faculty" placeholder="ТТТТ, напр. ФІОТ" autocomplete="off">
+                    <p class="hint">Формат: ТТТТ — чотири великі літери</p>
+                </div>
+
+                <button type="submit">Підтвердити</button>
+                <p id="form-message" class="form-message" role="status"></p>
+            </form>
+
+            <dialog id="result-dialog" class="result-dialog">
+                <h3>Введені дані</h3>
+                <dl id="result-list"></dl>
+                <form method="dialog"><button>Закрити</button></form>
+            </dialog>
+        </section>
+
+        <section class="task" aria-labelledby="task2-title">
+            <h2 id="task2-title">Завдання 2. Таблиця 6×6 і події миші</h2>
+            <p>Клітинка № 2: наведення — випадковий колір, клік — колір з палітри,
+                подвійний клік — колір з палітри для всього стовпця.</p>
+
+            <label class="palette">Колір з палітри:
+                <input type="color" id="palette" value="#ff0000">
+            </label>
+
+            <table id="number-table" class="number-table">
+                <caption class="visually-hidden">Числа від 1 до 36 по рядках</caption>
+                <tbody></tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Рудь Станіслав, ІП-44. Курс «Основи FE-технологій», КПІ ім. Ігоря Сікорського.</p>
+    </footer>
+</body>
+</html>
